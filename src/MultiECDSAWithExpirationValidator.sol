@@ -39,6 +39,17 @@ contract MultiECDSAWithExpirationValidator is ERC7579ValidatorBase {
         return sessionKeys[smartAccount] != 0;
     }
 
+    function addSessionKey(uint48 expirationTimestamp, address key) external {
+        uint256 count = sessionKeys[msg.sender];
+        sessionKey[count][msg.sender] =
+            Session({ expirationTimestamp: expirationTimestamp, key: key });
+        sessionKeys[msg.sender] = count + 1;
+    }
+
+    function removeSessionKey(uint256 keyId) external {
+        delete sessionKey[keyId][msg.sender];
+    }
+
     function validateUserOp(
         UserOperation calldata userOp,
         bytes32 userOpHash
