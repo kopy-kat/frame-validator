@@ -61,5 +61,8 @@
     "test": "forge test",
     "test:lite": "FOUNDRY_PROFILE=lite forge test",
     "test:optimized": "pnpm run build:optimized && FOUNDRY_PROFILE=test-optimized forge test"
+  },
+  "dependencies": {
+    "frame-verifier": "github:wilsoncusack/frame-verifier"
   }
 }

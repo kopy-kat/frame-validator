@@ -8,6 +8,7 @@ sentinellist/=node_modules/sentinellist/src/
 solmate/=node_modules/solmate/src/
 solady/=node_modules/solady/
 solarray/=node_modules/solarray/src/
+frame-verifier/=node_modules/frame-verifier/src/
 @openzeppelin/=node_modules/@openzeppelin/
 @rhinestone/modulekit/=node_modules/@rhinestone/modulekit/src/
 @rhinestone/sessionkeymanager/=node_modules/@rhinestone/sessionkeymanager/src/

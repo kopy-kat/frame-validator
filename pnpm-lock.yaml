@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  frame-verifier:
+    specifier: github:wilsoncusack/frame-verifier
+    version: github.com/wilsoncusack/frame-verifier/ed8bdb7c0117911be45ea2773080d21c67737385
+
 devDependencies:
   '@openzeppelin/contracts':
     specifier: 5.0.1
@@ -3326,7 +3331,7 @@ packages:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
     hasBin: true
     dependencies:
-      glob: 7.2.0
+      glob: 7.2.3
     dev: true
 
   /ripemd160@2.0.2:
@@ -4083,6 +4088,12 @@ packages:
     name: solady
     version: 0.0.166
     dev: true
+
+  github.com/wilsoncusack/frame-verifier/ed8bdb7c0117911be45ea2773080d21c67737385:
+    resolution: {tarball: https://codeload.github.com/wilsoncusack/frame-verifier/tar.gz/ed8bdb7c0117911be45ea2773080d21c67737385}
+    name: frame-verifier
+    version: 0.0.0
+    dev: false
 
   github.com/zeroknots/sentinellist/1f9ec0250f1b3f14ba5d200629e3d9f3264fde61:
     resolution: {tarball: https://codeload.github.com/zeroknots/sentinellist/tar.gz/1f9ec0250f1b3f14ba5d200629e3d9f3264fde61}
