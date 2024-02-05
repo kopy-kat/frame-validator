@@ -14,7 +14,7 @@ contract FrameValidatorTest is RhinestoneModuleKit, Test {
 
     // main account and dependencies
     RhinestoneAccount internal instance;
-    FrameValidator internal frameValidator;
+    FrameValidator internal validator;
 
     uint64 fid;
 
@@ -23,12 +23,12 @@ contract FrameValidatorTest is RhinestoneModuleKit, Test {
 
         fid = 64_417;
 
-        frameValidator = new FrameValidator();
-        vm.label(address(frameValidator), "FrameValidator");
+        validator = new FrameValidator();
+        vm.label(address(validator), "FrameValidator");
 
         instance = makeRhinestoneAccount("FrameValidator");
         vm.deal(address(instance.account), 10 ether);
-        instance.installValidator(address(frameValidator), abi.encode(fid));
+        instance.installValidator(address(validator), abi.encode(fid));
     }
 
     function getFrameData() internal returns (bytes memory sig) {
@@ -67,7 +67,7 @@ contract FrameValidatorTest is RhinestoneModuleKit, Test {
             target: target,
             value: value,
             callData: "",
-            txValidator: address(frameValidator)
+            txValidator: address(validator)
         });
         bytes memory signature = getFrameData();
         userOpData.userOp.signature = signature;
