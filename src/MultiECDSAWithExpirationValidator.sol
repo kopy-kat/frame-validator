@@ -2,7 +2,7 @@
 pragma solidity >=0.8.19;
 
 import { ERC7579ValidatorBase } from "modulekit/Modules.sol";
-import { UserOperation, UserOperationLib } from "modulekit/external/ERC4337.sol";
+import { UserOperation } from "modulekit/external/ERC4337.sol";
 import { EncodedModuleTypes } from "erc7579/lib/ModuleTypeLib.sol";
 import { FrameVerifier, MessageData } from "frame-verifier/FrameVerifier.sol";
 import { MessageType } from "frame-verifier/Encoder.sol";
@@ -10,7 +10,6 @@ import { SignatureCheckerLib } from "solady/src/utils/SignatureCheckerLib.sol";
 import { ECDSA } from "solady/src/utils/ECDSA.sol";
 
 contract MultiECDSAWithExpirationValidator is ERC7579ValidatorBase {
-    using UserOperationLib for UserOperation;
     using SignatureCheckerLib for address;
 
     struct Session {

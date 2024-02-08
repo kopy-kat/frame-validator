@@ -2,14 +2,12 @@
 pragma solidity >=0.8.19;
 
 import { ERC7579ValidatorBase } from "modulekit/Modules.sol";
-import { UserOperation, UserOperationLib } from "modulekit/external/ERC4337.sol";
+import { UserOperation } from "modulekit/external/ERC4337.sol";
 import { EncodedModuleTypes } from "erc7579/lib/ModuleTypeLib.sol";
 import { FrameVerifier, MessageData } from "frame-verifier/FrameVerifier.sol";
 import { MessageType } from "frame-verifier/Encoder.sol";
 
 contract FrameValidator is ERC7579ValidatorBase {
-    using UserOperationLib for UserOperation;
-
     mapping(address => uint64) public smartAccountFID;
 
     function onInstall(bytes calldata data) external override {
